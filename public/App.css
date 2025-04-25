@@ -212,4 +212,13 @@ li {
   letter-spacing: 1.3px;
   word-spacing: 3px;
   padding: 35px 25px 1px 25px;
+  margin: 20px auto;
+}
+.elementor-accordion-title {
+  font-family: "Roboto", Sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 5px;
+  color: #fff;
+  margin: 10px 0px 15px 5px;
 }
