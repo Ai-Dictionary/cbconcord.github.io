@@ -1,9 +1,11 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const jsonfile = require('jsonfile');
 require('./public/App.test.js');
+require('dotenv').config();
 
 class WEB{
     constructor(port){
@@ -26,15 +28,31 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/images',express.static(path.join(__dirname,'images')));
 app.use('/public',express.static(path.join(__dirname,'public')));
 
+app.use(bodyParser.json({ limit: '1mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '1mb' }));
+
+app.use((req, res, next) => {
+    next();
+});
+
+const promises = [
+    ejs.renderFile('./views/header.ejs'),
+    ejs.renderFile('./views/footer.ejs')
+];
 
 app.get('/', (req, res) => {
-    res.status(200).send("Hello");
+    Promise.all(promises).then(([header, footer]) => {
+        res.status(200).render('index',{header, footer});
+    });
 });
 
-
-app.get('*', (req, res) => {
-    res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
+app.get('/index', (req, res) => {
+    res.redirect('/');
 });
+
+// app.get('*', (req, res) => {
+//     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
+// });
 
 server.listen(PORT, (err) => {
     if(err) console.log("Oops an error occure:  "+err);
