@@ -50,9 +50,9 @@ app.get('/index', (req, res) => {
     res.redirect('/');
 });
 
-// app.get('*', (req, res) => {
-//     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
-// });
+app.all(/.*/, (req, res) => {
+    res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
+});
 
 server.listen(PORT, (err) => {
     if(err) console.log("Oops an error occure:  "+err);

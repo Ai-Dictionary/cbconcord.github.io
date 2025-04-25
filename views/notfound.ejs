@@ -15,10 +15,27 @@
 <style>
     body{
         overflow: hidden!important;
+        background: #000;
+        color: aliceblue;
+        background-image: url('../images/404bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .container{
+        padding-top: 20%;
+        height: 100vh;
+        width: 100vw;
+    }
+    h1{
+        text-align: center;
+        color: #f3c242;
+    }
+    h4{
+        text-align: center;
     }
 </style>
 <body>
-    <section class="workspace" id="e404">
+    <section class="container" id="e404">
         <h1><%= error %>!</h1>
         <h4><%= message %></h4>
     </section>

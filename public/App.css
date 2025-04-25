@@ -201,3 +201,15 @@ li {
     color: #fff!important;
   }
 }
+
+.elementor-tab-content {
+  background-color: #0F0F0F;
+  color: #A5A5A5;
+  font-family: "Roboto", Sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 31px;
+  letter-spacing: 1.3px;
+  word-spacing: 3px;
+  padding: 35px 25px 1px 25px;
+}
