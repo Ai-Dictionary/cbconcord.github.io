@@ -1,0 +1,21 @@
+{
+  "name": "cbconcord",
+  "version": "1.0.0",
+  "description": "Calcutta Boys Concord event of 2025",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ai-Dictionary/cbconcord.git"
+  },
+  "author": "Ai Dictionary",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "jsonfile": "^6.1.0"
+  }
+}

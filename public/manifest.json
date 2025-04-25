@@ -1,0 +1,23 @@
+{
+    "name": "CBCONCORD",
+    "short_name": "concord",
+    "description": "Calcutta Boys Concord event of 2025",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "1500x1500 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "logo1500.png",
+            "type": "image/png",
+            "sizes": "1500x1500"
+        }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#22577aff",
+    "background_color": "#ffffff",
+    "contact": "info.aidictionary24x7@gmail.com",
+    "developer": "Ai Dictionary "
+}
