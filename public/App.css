@@ -261,6 +261,7 @@ li {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background: #0000003b;
   .btn-group{
     width: 30%;
     .icons{
@@ -291,5 +292,8 @@ li {
   } 
   .previewImage-back .btn-slide{
     top: 60%;
+  }
+  .previewImage-back .head .btn-group{
+    width: 50%;
   }
 }

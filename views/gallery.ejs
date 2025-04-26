@@ -312,9 +312,9 @@
             <div class="btn icons back-icon" onclick="previewImagesClose();"><i class="fa fa-long-arrow-left"></i> Back</div>
             <div class="btn-group">
                 <div class="btn icons" id="slide-length"></div>
-                <div class="btn icons"><i class="fa fa-search-minus"></i></div>
-                <div class="btn icons"><i class="fa fa-search-plus"></i></div>
-                <div class="btn icons"><i class="fa fa-share"></i></div>
+                <div class="btn icons" onclick="zoomOut();"><i class="fa fa-search-minus"></i></div>
+                <div class="btn icons" onclick="zoomIn();"><i class="fa fa-search-plus"></i></div>
+                <div class="btn icons" onclick="imageIdCopy();"><i class="fa fa-share"></i></div>
             </div>
         </div>
         <div class="image"></div>
@@ -350,6 +350,11 @@
     document.getElementById('header').innerHTML = document.getElementById('header').textContent;
     document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
     previewImagesListener();
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('imageReview');
+    if(searchParam!=null){
+	    previewImages((searchParam*1)-1);
+    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
