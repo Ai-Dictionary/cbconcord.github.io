@@ -50,6 +50,12 @@ app.get('/index', (req, res) => {
     res.redirect('/');
 });
 
+app.get('/gallery', (req, res) => {
+    Promise.all(promises).then(([header, footer]) => {
+        res.status(200).render('gallery',{header, footer});
+    });
+});
+
 app.all(/.*/, (req, res) => {
     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
 });
