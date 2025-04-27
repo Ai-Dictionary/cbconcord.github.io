@@ -33,6 +33,8 @@ Be there to witness the future stars!
 ## 💻 Technologies Used
 
 This project is developed using the powerful **JTEN Stack**, specially curated for scalable and efficient web application development:  
+![JTEN](https://cbsconcord2025.vercel.app/images/JTEN.png)
+
 - **J**SON for structured data management  
 - **T**ypeScript for robust scripting  
 - **E**mbedded JS (EJS) for dynamic front-end templates  
