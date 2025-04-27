@@ -87,3 +87,34 @@ function imageIdCopy(){
     document.body.removeChild(tempTextarea);
     alert("URL has been copied to the clipboard!");
 }
+
+function downloadImage(){
+    const image = document.querySelectorAll('.previewImage')[slide_image];
+    const fileName = 'cbsconcord.png';
+    const link = document.createElement("a");
+    link.href = image.src;
+    link.download = fileName;
+    link.click();
+}
+
+function openFullscreen(){
+    var elem = document.documentElement;
+    if(elem.requestFullscreen){
+    elem.requestFullscreen();
+    }else if(elem.webkitRequestFullscreen){
+        elem.webkitRequestFullscreen();
+    }else if(elem.msRequestFullscreen){
+        elem.msRequestFullscreen();
+    }
+}
+
+function closeFullscreen(){
+    var elem = document.documentElement;
+    if(document.exitFullscreen){
+        document.exitFullscreen();
+    }else if(document.webkitExitFullscreen){
+        document.webkitExitFullscreen();
+    }else if(document.msExitFullscreen){
+        document.msExitFullscreen();
+    }
+}

@@ -37,11 +37,12 @@ app.use((req, res, next) => {
 
 const promises = [
     ejs.renderFile('./views/header.ejs'),
+    ejs.renderFile('./views/previewImage.ejs'),
     ejs.renderFile('./views/footer.ejs')
 ];
 
 app.get('/', (req, res) => {
-    Promise.all(promises).then(([header, footer]) => {
+    Promise.all(promises).then(([header, previewImage, footer]) => {
         res.status(200).render('index',{header, footer});
     });
 });
@@ -51,14 +52,20 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/gallery', (req, res) => {
-    Promise.all(promises).then(([header, footer]) => {
-        res.status(200).render('gallery',{header, footer});
+    Promise.all(promises).then(([header, previewImage, footer]) => {
+        res.status(200).render('gallery',{header, previewImage, footer});
     });
 });
 
 app.get('/about', (req, res) => {
-    Promise.all(promises).then(([header, footer]) => {
+    Promise.all(promises).then(([header, previewImage, footer]) => {
         res.status(200).render('about',{header, footer});
+    });
+});
+
+app.get('/sponsors', (req, res) => {
+    Promise.all(promises).then(([header, previewImage, footer]) => {
+        res.status(200).render('sponsors',{header, previewImage, footer});
     });
 });
 
