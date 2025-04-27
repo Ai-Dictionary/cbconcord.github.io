@@ -238,7 +238,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 66;
+  z-index: 100001;
   .btn-slide{
     position: fixed;
     top: 45%;

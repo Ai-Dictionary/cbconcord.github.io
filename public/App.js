@@ -77,9 +77,9 @@ function zoomOut(){
 }
 
 function imageIdCopy(){
-    const textToCopy = window.location.href+"?imageReview="+slide_image;
+    const textToCopy = new URL(window.location.href+"?imageReview="+slide_image);
     const tempTextarea = document.createElement("textarea");
-    tempTextarea.value = textToCopy.textContent;
+    tempTextarea.value = textToCopy;
     document.body.appendChild(tempTextarea);
     tempTextarea.select();
     tempTextarea.setSelectionRange(0, 99999);
