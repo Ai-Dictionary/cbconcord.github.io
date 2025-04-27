@@ -56,6 +56,12 @@ app.get('/gallery', (req, res) => {
     });
 });
 
+app.get('/about', (req, res) => {
+    Promise.all(promises).then(([header, footer]) => {
+        res.status(200).render('about',{header, footer});
+    });
+});
+
 app.all(/.*/, (req, res) => {
     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
 });
