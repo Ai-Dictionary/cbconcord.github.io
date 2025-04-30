@@ -68,16 +68,21 @@ let zoom_range;
 function zoomIn(){
     let imageDiv = document.querySelector('.previewImage-back');
     zoom_range = imageDiv.childNodes[3].style.width;
-    imageDiv.childNodes[3].style.width = "140%";
+    imageDiv.childNodes[3].style.width = "100%";
+    imageDiv.childNodes[3].style.height = "750px";
+    imageDiv.childNodes[3].childNodes[0].style.width = "100%";
 }
 
 function zoomOut(){
     let imageDiv = document.querySelector('.previewImage-back');
     imageDiv.childNodes[3].style.width = zoom_range;
+    // imageDiv.childNodes[3].style.width = "100%";
+    imageDiv.childNodes[3].style.height = "600px";
+    imageDiv.childNodes[3].childNodes[0].style.width = "fit-content";
 }
 
 function imageIdCopy(){
-    const textToCopy = new URL(window.location.href+"?imageReview="+slide_image);
+    const textToCopy = new URL(window.location.origin+window.location.pathname+"?imageReview="+slide_image);
     const tempTextarea = document.createElement("textarea");
     tempTextarea.value = textToCopy;
     document.body.appendChild(tempTextarea);

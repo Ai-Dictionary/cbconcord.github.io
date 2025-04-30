@@ -275,14 +275,18 @@ li {
   }
 }
 .previewImage-back .image{
-  width: 989px;
+  width: fit-content;
   height: 600px;
   margin: 20px auto;
   /* background: black; */
   img{
     width: fit-content;
-    height: fit-content;
+    height: -webkit-fill-available;
   }
+}
+.image-gallary img{
+  width: 350px;
+  height: -webkit-fill-available;
 }
 
 
@@ -294,6 +298,6 @@ li {
     top: 60%;
   }
   .previewImage-back .head .btn-group{
-    width: 60%;
+    width: 70%;
   }
 }
