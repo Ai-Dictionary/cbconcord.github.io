@@ -123,3 +123,11 @@ function closeFullscreen(){
         document.msExitFullscreen();
     }
 }
+
+function unfoldeEvent(index){
+    let id = "elementor-tab-content-608";
+    for(let i=0; i<3; i++){
+        document.getElementById(id+(i+1)).style.display = "none";
+    }
+    document.getElementById(id+index).style.display = "block";
+}

@@ -344,7 +344,9 @@ li {
     font-family: serif;
   }
 }
-
+#elementor-tab-content-6081, #elementor-tab-content-6082, #elementor-tab-content-6083{
+  display: none;
+}
 
 
 @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
