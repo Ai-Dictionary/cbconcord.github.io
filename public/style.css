@@ -9943,6 +9943,9 @@ html,
 body {
   font-size: 16px;
   background: #121212!important;
+  background-image: url('../images/fire.gif')!important;
+  background-repeat: no-repeat!important;
+  background-size: cover!important;
   color: #F6f6f6!important;
   font-family: 'Livvic', sans-serif;
   vertical-align: baseline;
