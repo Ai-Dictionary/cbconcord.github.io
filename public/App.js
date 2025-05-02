@@ -131,3 +131,33 @@ function unfoldeEvent(index){
     }
     document.getElementById(id+index).style.display = "block";
 }
+
+function previewSponsoreListener(){
+    const images = document.querySelectorAll('.previewImage');
+
+    images.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            previewSponsore(index);
+        });
+    });
+}
+
+function previewSponsore(index){
+    const images = document.querySelectorAll('.previewImage');
+    const about = document.querySelectorAll('.about-sponsor');
+    const access = document.querySelectorAll('.access-sponsor');
+    document.querySelector('.previewImage-back').style.display = "block";
+    let imageDiv = document.querySelector('.previewImage-back');
+    imageDiv.childNodes[3].childNodes[1].innerHTML = `<image src="${images[index].src}" alt="cbconcord"/>`;
+    imageDiv.childNodes[3].childNodes[3].textContent = about[index].textContent;
+    imageDiv.childNodes[3].childNodes[5].textContent = access[index].textContent;
+    document.querySelector('#slide-length').textContent = `${index+1}/${document.querySelectorAll('.previewImage').length}`;
+    slide_image = index;
+}
+function previewSponsoreClose(){
+    document.querySelector('.previewImage-back').style.display = "none";
+    let imageDiv = document.querySelector('.previewImage-back');
+    imageDiv.childNodes[3].childNodes[1].innerHTML = '';
+    imageDiv.childNodes[3].childNodes[3].textContent = '';
+    imageDiv.childNodes[3].childNodes[5].textContent = '';
+}
