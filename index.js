@@ -76,6 +76,12 @@ app.get('/contact', (req, res) => {
     });
 });
 
+app.get('/events', (req, res) => {
+    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
+        res.status(200).render('events',{header, footer});
+    });
+});
+
 app.all(/.*/, (req, res) => {
     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
 });

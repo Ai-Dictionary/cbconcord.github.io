@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title version="1.0">Events - cbsconcord</title>
+    <link rel="apple-touch-icon" href="../public/logo1500.png">
+    <link rel="icon" href="../public/favicon.ico" sizes="192x192">
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/fonts/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/off-canvas.css" />
+    <link rel="stylesheet" href="https://thedriftmedia.com/assets/css/rsmenu-main.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/rs-spacing.css" />
+    <link rel="stylesheet" type="text/css" href="../public/style.css" />
+    <link rel="stylesheet" type="text/css" href="../public/App.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/responsive.css" />
+    <link rel="alternate" type="application/rss+xml" title="cbsconcord » Feed" href="https://cbsconcord2025.com/feed/">
+    <link rel="alternate" type="application/rss+xml" title="cbsconcord » Comments Feed"
+        href="https://cbsconcord2025.com/comments/feed/">
+</head>
+<style>
+    .flx{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .flx .event{
+        width: 30%;
+        margin: 40px auto;
+        .icons{
+            width: 100px;
+            height: 100px;
+            background: #FF6700;
+            border-radius: 50%;
+            margin: 8px auto;
+            svg{
+                width: 70%;
+                height: 70%;
+                margin: 15%;
+                color: #fff;
+            }
+        }
+        .head{
+            font-size: 36px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            color: #FF6700;
+        }
+        .body{
+            font-size: 18px;
+            color: #fff
+        }
+    }
+    #onStageEvents, #offStageEvents, #fieldEvents{
+        display: none;
+    }
+    @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
+        .flx .event{
+            width: 90%;
+        }
+    }
+</style>
+<body class="defult-home">
+
+    <div id="loader" class="loader">
+        <div class="loader-container"></div>
+    </div>
+
+    <span id="header">
+        <%= header %>
+    </span>
+
+    <!--Events Section Start -->
+    <div class="rs-services main-home pt-120 pb-120 md-pt-70 md-pb-70" style="padding-top: 30px!important;">
+        <div class="container">
+            <div class="events" id="onStageEvents">
+                <div class="sec-title2 text-center mb-45">
+                    <h2 class="title">
+                        On-stage events
+                    </h2>
+                    <div class="heading-line"></div>
+                    <div class="flx">
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Converge</div>
+                            <div class="body">Western band</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Conflagration</div>
+                            <div class="body">Western band</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Conjure</div>
+                            <div class="body">Fashion show</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Concentus</div>
+                            <div class="body">Devotional choir</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Conduce</div>
+                            <div class="body">Fan fiction drama</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Consonance</div>
+                            <div class="body">Acoustic event</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                                    <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6zm11.386 3.785-1.806-2.41-.776 2.413zm-3.633.004.961-2.989H4.186l.963 2.995zM5.47 5.495 8 13.366l2.532-7.876zm-1.371-.999-.78-2.422-1.818 2.425zM1.499 5.5l5.113 6.817-2.192-6.82zm7.889 6.817 5.123-6.83-2.928.002z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Concerto</div>
+                            <div class="body">Eastern music</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events" id="offStageEvents">
+                <div class="sec-title2 text-center mb-45">
+                    <h2 class="title">
+                        Off-stage events
+                    </h2>
+                    <div class="heading-line"></div>
+                    <div class="flx">
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Controversy</div>
+                            <div class="body">Turncoat</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Consider</div>
+                            <div class="body">Visual poetry slam</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Concoct</div>
+                            <div class="body">Terribly tiny tales</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Conjecture</div>
+                            <div class="body">Quiz</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Context</div>
+                            <div class="body">Blogging contest</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Configure</div>
+                            <div class="body">Coding jam</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Contrast</div>
+                            <div class="body">Poster making</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Convoke</div>
+                            <div class="body">Graphics designing</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+                                    <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Contemplate</div>
+                            <div class="body">Chess</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="events" id="fieldEvents">
+                <div class="sec-title2 text-center mb-45">
+                    <h2 class="title">
+                        Field events
+                    </h2>
+                    <div class="heading-line"></div>
+                    <div class="flx">
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Contest</div>
+                            <div class="body">Tug of war (Boys & Girls)</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Contrive</div>
+                            <div class="body">Basketball (Boys & Girls)</div>
+                        </div>
+                        <div class="event">
+                            <div class="icons">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                                    <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                                </svg>
+                            </div>
+                            <div class="head">Consolidate</div>
+                            <div class="body">Football</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Events Section End -->
+
+    <!-- Partner Start -->
+    <div class="rs-partner pt-80 pb-70">
+        <div class="container">
+            <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="30" data-autoplay="true"
+                data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false"
+                data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="2"
+                data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="3"
+                data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2"
+                data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="5"
+                data-md-device-nav="false" data-md-device-dots="false">
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096495.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096495.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096496.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096496.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096497.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096497.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096498.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096498.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096499.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096499.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096501.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096501.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096500.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096500.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096502.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096502.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096504.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096504.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096505.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096505.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096507.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-48096507.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new1.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new1.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="partner-item">
+                    <div class="logo-img">
+                        <a href="/">
+                            <img class="hover-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new2.png" alt="" />
+                            <img class="main-logo"
+                                src="https://cbsconcord2024.com/wp-content/uploads/2024/06/Frame-new2.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Partner End -->
+
+    <!-- Footer Start -->
+    <footer id="rs-footer" class="rs-footer">
+        <%= footer %>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- start scrollUp  -->
+    <div id="scrollUp" class="orange-color">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- End scrollUp  -->
+
+    <!-- jquery latest version -->
+    <script src="https://thedriftmedia.com/assets/js/jquery.min.js"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="https://thedriftmedia.com/assets/js/bootstrap.min.js"></script>
+    <!-- Menu js -->
+    <script src="https://thedriftmedia.com/assets/js/rsmenu-main.js"></script>
+    <!-- op nav js -->
+    <script src="https://thedriftmedia.com/assets/js/jquery.nav.js"></script>
+    <!-- owl.carousel js -->
+    <script src="https://thedriftmedia.com/assets/js/owl.carousel.min.js"></script>
+    <!-- wow js -->
+    <script src="https://thedriftmedia.com/assets/js/wow.min.js"></script>
+    <!-- main js -->
+    <script src="https://thedriftmedia.com/assets/js/main.js"></script>
+
+    <script src="https://thedriftmedia.com/js/jquery-3.3.1.min.js"></script>
+    <script src="https://thedriftmedia.com/js/popper.min.js"></script>
+    <script src="https://thedriftmedia.com/js/bootstrap.min.js"></script>
+    <script src="https://thedriftmedia.com/js/main.js"></script>
+</body>
+<script src="../public/App.js"></script>
+<script>
+    document.getElementById('header').innerHTML = document.getElementById('header').textContent;
+    document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
+    function displayEvent(event){
+        let event_list = ['onStageEvents', 'offStageEvents', 'fieldEvents'];
+        if(event=='all'||event===undefined||event===null){
+            for(let i=0; i<event_list.length; i++){
+                document.getElementById(event_list[i]).style.display = "block";
+            }
+        }else{
+            for(let i=0; i<event_list.length; i++){
+                document.getElementById(event_list[i]).style.display = "none";
+                if(event_list[i]==event){
+                    document.getElementById(event_list[i]).style.display = "block";
+                }
+            }
+        }
+    }
+    const urlParams = new URLSearchParams(window.location.search);
+    let searchParam = urlParams.get('event');
+    if(searchParam==null) searchParam='all';
+    displayEvent(searchParam);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</html>
