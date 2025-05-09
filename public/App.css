@@ -5,6 +5,7 @@
     padding: 10px 0px;
     overflow: hidden;
     position: relative;
+    user-select: none;
     border-bottom: 1px solid #fff;
 }
 
@@ -186,6 +187,7 @@ li {
 }
 .viewMore{
   position: relative;
+  background-color: #000;
   img{
     opacity: 0.3;
     cursor: pointer;
@@ -199,9 +201,13 @@ li {
     text-align: center;
     cursor: pointer;
   }
-  a{
-    color: #fff!important;
-  }
+}
+.viewMore::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000aa;
 }
 
 .elementor-tab-content {

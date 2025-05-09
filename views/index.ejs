@@ -41,18 +41,23 @@
     <link rel="alternate" type="application/rss+xml" title="cbsconcord » Comments Feed" href="https://cbsconcord2025.com/comments/feed/">
 </head>
 <style>
+    @font-face {
+        font-family: 'Old English 5';
+        src: url('../assets/fonts/OldEnglishFive-axyVg.ttf') format('truetype');
+    }
     .banner{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width: 100%;
         margin: 50px auto 20px auto;
+        user-select: none;
         .left-banner, .right-banner{
             width: 50%;
         }
     }
     .left-banner{
-        padding-top: 5%;
+        padding-top: 2%;
         padding-bottom: 5%;
         text-align: center;
         h2{
@@ -60,10 +65,35 @@
         }
         h1{
             font-family: "Old English 5", Sans-serif;
-            color: #f3c242;
+            background: linear-gradient(50deg, #FF6700 30%, #f3c242 50%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 70px;
         }
         img{
             width: 30%;
+        }
+        .social{
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            margin: 10px auto;
+            .social_icon{
+                width: 35px;
+                height: 35px;
+                margin-right: 12px;
+                background: #f3c242;
+                border-radius: 50%;
+                cursor: pointer;
+                i{
+                    font-size: 18px;
+                    margin: 8px auto;
+                }
+            }
+            .social_icon:hover{
+                background: #fff;
+                color: #f3c242;
+            }
         }
     }
     .right-banner{
@@ -71,12 +101,24 @@
         text-align: center;
         color: #f3c242;
         font-size: 22px;
-        font-weight: bold;
         font-family: "Old English 5", Sans-serif;
         iframe{
             width: 90%;
             height: 90%;
             margin: 2% 5%;
+        }
+    }
+    .crop-image{
+        height: 214px;
+        max-width: 30%;
+        background: grey;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        padding: 0px;
+        margin: 15px 1%;
+        img{
+            display: none;
         }
     }
     @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
@@ -89,24 +131,25 @@
     }
 </style>
 <body class="defult-home">
-
     <div id="loader" class="loader">
         <div class="loader-container"></div>
     </div>
-
     <span id="header"><%= header %></span>
-
     <!-- Banner Section Start -->
     <div class="banner">
         <div class="left-banner">
             <h2>Calcutta Boys' School<br>present</h2>
             <img src="../public/favicon.ico" alt="cbsconcord" width="50"/>
             <h1>Concord 2025</h1>
+            <div class="social">
+                <div class="social_icon" onclick="route('https:/\/www.youtube.com/channel/UCZoRJnyObx7S94WBtxeN3Gw')"><i class="fa fa-youtube-play"></i></div>
+                <div class="social_icon" onclick="route('https:/\/www.instagram.com/concord.2k25?igsh=Y3I5MTB1Y254eGls')"><i class="fa fa-instagram"></i></div>
+            </div>
         </div>
         <div class="right-banner">
             <div class="video-head">Rewind to concord 2024</div>
             <iframe src="https://www.youtube.com/embed/8PBGUqZkyhY?si=jG46UiNOYQogAHPc?playlist=8PBGUqZkyhY?si=jG46UiNOYQogAHPc&loop=1&autoplay=1&modestbranding=1&controls=1&mute=1&rel=0" frameborder="0" class="video" title="Welcome to the Concord 2025" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; loop"
             allowfullscreen></iframe>
         </div>
     </div>
@@ -125,47 +168,45 @@
         <div class="container">
             <div class="sec-title2 text-center mb-45">
                 <h2 class="title">
-                    View our best memories
+                    Gallery
                 </h2>
                 <div class="heading-line"></div>
             </div>
             <div class="image-gallary">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/1.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/2.jpg" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/3.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/4.jpg" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/5.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/6.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/7.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/8.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/9.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25" onclick="route('/gallery')">
+                    <div class="col-lg-4 col-md-6 mb-25 crop-image" onclick="route('/gallery')">
                         <image src="../images/FIRST 10 PREVIEW/10.JPG" alt="cbsconcord"/>
                     </div>
-                    <div class="col-lg-4 col-md-6 mb-25 viewMore">
-                        <a href="/gallery">
-                            <image src="../images/1.JPG" alt="cbsconcord"/>
-                            <div class="center">40+<br>View More</div>
-                        </a>
+                    <div class="col-lg-4 col-md-6 mb-25 viewMore crop-image" onclick="route('/gallery')">
+                        <image src="../images/1.JPG" alt="cbsconcord"/>
+                        <div class="center">40+<br>View More</div>
                     </div>
                 </div>
             </div>
@@ -179,7 +220,7 @@
                     Experience the oldest fest
                 </h2>
                 <div class="heading-line"></div>
-                <p class="text-muted">Every year, Concord, the biggest fest hosted by the United Students' Organization ( USO )of Calcutta Boys' School, brings together the energy and creativity of students from all over. It's a vibrant celebration where talent meets passion across academics, arts, sports, and culture!
+                <p class="">Every year, Concord, the biggest fest hosted by the United Students' Organization ( USO )of Calcutta Boys' School, brings together the energy and creativity of students from all over. It's a vibrant celebration where talent meets passion across academics, arts, sports, and culture!
                 </p>
             </div>
             <div class="row">
@@ -397,8 +438,8 @@
                         data-id="3a0a24d" data-element_type="widget" data-widget_type="accordion.default">
                         <div class="elementor-widget-container">
                             <div class="elementor-accordion">
-                                <div class="elementor-accordion-item" style="margin-bottom: 20px;">
-                                    <div id="elementor-tab-title-6081" onclick="unfoldeEvent(1);" class="elementor-tab-title elementor-active" data-tab="1"
+                                <div class="elementor-accordion-item" id="event-day-1" style="margin-bottom: 20px;">
+                                    <div id="elementor-tab-title-6081" onclick="unfoldeEvent(1);route('/#event-day-1');" class="elementor-tab-title elementor-active" data-tab="1"
                                         role="button" aria-controls="elementor-tab-content-6081" aria-expanded="true" tabindex="0"
                                         aria-selected="true">
                                         <!-- <span class="elementor-accordion-icon elementor-accordion-icon-left" aria-hidden="true">
@@ -455,8 +496,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="elementor-accordion-item" style="margin-bottom: 20px;">
-                                    <div id="elementor-tab-title-6082" onclick="unfoldeEvent(2);" class="elementor-tab-title" data-tab="2" role="button"
+                                <div class="elementor-accordion-item" id="event-day-2" style="margin-bottom: 20px;">
+                                    <div id="elementor-tab-title-6082" onclick="unfoldeEvent(2);route('/#event-day-2');" class="elementor-tab-title" data-tab="2" role="button"
                                         aria-controls="elementor-tab-content-6082" aria-expanded="false">
                                         <!-- <span class="elementor-accordion-icon elementor-accordion-icon-left" aria-hidden="true">
                                             <span class="elementor-accordion-icon-closed"><svg class="e-font-icon-svg e-fas-plus"
@@ -511,8 +552,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="elementor-accordion-item" style="margin-bottom: 20px;">
-                                    <div id="elementor-tab-title-6083" onclick="unfoldeEvent(3);" class="elementor-tab-title" data-tab="3" role="button"
+                                <div class="elementor-accordion-item" id="event-day-3" style="margin-bottom: 20px;">
+                                    <div id="elementor-tab-title-6083" onclick="unfoldeEvent(3);route('/#event-day-3');" class="elementor-tab-title" data-tab="3" role="button"
                                         aria-controls="elementor-tab-content-6083" aria-expanded="false">
                                         <!-- <span class="elementor-accordion-icon elementor-accordion-icon-left" aria-hidden="true">
                                             <span class="elementor-accordion-icon-closed"><svg class="e-font-icon-svg e-fas-plus"
@@ -558,7 +599,7 @@
     </div>
     <!-- Event End -->
     <!-- Partner Start -->
-    <div class="rs-partner pt-80 pb-70">
+    <!-- <div class="rs-partner pt-80 pb-70">
         <div class="container">
             <div class="rs-carousel owl-carousel" data-loop="true" data-items="5" data-margin="30" data-autoplay="true"
                 data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false"
@@ -681,7 +722,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Partner End -->
 
     <!-- Footer Start -->
@@ -763,8 +804,15 @@
 <script>
     document.getElementById('header').innerHTML = document.getElementById('header').textContent;
     document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
-    document.body.scrollTop = 150; // For Safari
-    document.documentElement.scrollTop = 150;
+    // document.body.scrollTop = 150; // For Safari
+    // document.documentElement.scrollTop = 150;
+    function setGallary(){
+        let imgbin = document.querySelectorAll('.crop-image');
+        for(let i=0; i<imgbin.length; i++){
+            imgbin[i].style.backgroundImage = `url(${imgbin[i].childNodes[1].src})`;
+        }
+    }
+    setGallary();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>

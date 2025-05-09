@@ -23,7 +23,7 @@ function route(link){
 let slide_image = 0;
 
 function previewImagesListener(){
-    const images = document.querySelectorAll('.previewImage');
+    const images = document.querySelectorAll('.crop-image');
 
     images.forEach((image, index) => {
         image.addEventListener('click', () => {
