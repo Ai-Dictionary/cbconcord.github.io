@@ -33,17 +33,26 @@
     }
     .rs-services .container {
         max-width: 100%;
+        max-height: 100%;
         padding: 0px;
-        background-image: url('../images/consert.png');
+        background-image: url('../images/concert.png');
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 50% 50%;
+        /* background-position: 50% 50%; */
+    }
+    .rs-services .container::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: -webkit-fill-available;
+        background: #000000ac;
     }
 
     .elementor-element-6b1874c,
     .elementor-element-a50ad57 {
         /* background: #000; */
         padding: 60px 10px 20px 10px;
+        position: relative;
     }
 
     .e-con.e-flex>.e-con-inner {
@@ -58,6 +67,7 @@
             width: 45%;
             p{
                 text-align: justify;
+                color: #bfc5ca;
             }
         }
     }
