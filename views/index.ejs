@@ -71,7 +71,7 @@
             font-size: 70px;
         }
         img{
-            width: 30%;
+            width: 40%;
         }
         .social{
             width: 70%;
@@ -121,7 +121,8 @@
             display: none;
         }
     }
-    @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
+    @media only screen and (max-width: 900px){
+        /* , only screen and (min-width: 900px) and (max-width: 1200px){ */
         .banner{
             flex-direction: column-reverse;
             .left-banner, .right-banner{
@@ -133,6 +134,17 @@
             max-width: 95%;
             margin: 15px auto;
         }
+        .left-banner{
+            h2{
+                font-size: 20px;
+            }
+            h1{
+                font-size: 40px;
+            }
+            img{
+                width: 70%;
+            }
+        }
     }
 </style>
 <body class="defult-home">
@@ -143,7 +155,7 @@
     <!-- Banner Section Start -->
     <div class="banner">
         <div class="left-banner">
-            <h2>Calcutta Boys' School<br>present</h2>
+            <h2>Calcutta Boys' School present</h2>
             <img src="../public/favicon.ico" alt="cbsconcord" width="50"/>
             <h1>Concord 2025</h1>
             <div class="social">
@@ -225,7 +237,7 @@
                     Experience the oldest fest
                 </h2>
                 <div class="heading-line"></div>
-                <p class="">Every year, Concord, the biggest fest hosted by the United Students' Organization ( USO )of Calcutta Boys' School, brings together the energy and creativity of students from all over. It's a vibrant celebration where talent meets passion across academics, arts, sports, and culture!
+                <p class="text-white">Every year, Concord, the biggest fest hosted by the United Students' Organization ( USO )of Calcutta Boys' School, brings together the energy and creativity of students from all over. It's a vibrant celebration where talent meets passion across academics, arts, sports, and culture!
                 </p>
             </div>
             <div class="row">

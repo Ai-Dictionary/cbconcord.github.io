@@ -232,7 +232,7 @@ li {
 }
 
 .logo-part a img{
-  width: 80px;
+  width: 60px;
   height: 60px;
 }
 
@@ -377,7 +377,8 @@ li {
 }
 
 
-@media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
+@media only screen and (max-width: 900px){
+  /* , only screen and (min-width: 900px) and (max-width: 1200px){ */
   .previewImage-back .image{
     width: 95%;
   } 
