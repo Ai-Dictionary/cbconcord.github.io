@@ -16,9 +16,6 @@ $(document).ready(function () {
     });
 });
 
-let brightness = 1.4;
-document.body.style.filter = `brightness(${brightness})`;
-
 function route(link){
     window.location = link;
 }
