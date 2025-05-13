@@ -19147,6 +19147,9 @@ body .search-modal .close:hover {
   position: relative;
   z-index: 1;
   overflow: hidden;
+  width: 100%!important;
+  height: 350px!important;
+  background-repeat: no-repeat;
 }
 
 .rs-project.style8 .project-item .project-img img {

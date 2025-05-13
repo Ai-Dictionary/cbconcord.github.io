@@ -121,6 +121,13 @@
             display: none;
         }
     }
+    .project-img {
+        width: 100%!important;
+        height: 350px!important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
     @media only screen and (max-width: 900px){
         /* , only screen and (min-width: 900px) and (max-width: 1200px){ */
         .banner{
@@ -325,7 +332,7 @@
                 data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2"
                 data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3"
                 data-md-device-nav="true" data-md-device-dots="false">
-                <div class="project-item">
+                <div class="project-item" onclick="route('/events?event=onStageEvents');">
                     <div class="project-img">
                         <a href="/events?event=onStageEvents"><img src="https://cbsconcord2024.com/wp-content/uploads/2021/06/events-2-2.jpg"
                                 alt="images" /></a>
@@ -336,7 +343,7 @@
                         </h3>
                     </div>
                 </div>
-                <div class="project-item">
+                <div class="project-item" onclick="route('/events?event=offStageEvents');">
                     <div class="project-img">
                         <a href="/events?event=offStageEvents"><img
                                 src="https://cbsconcord2024.com/wp-content/uploads/2024/05/1544472499283.jpeg" alt="images" /></a>
@@ -347,7 +354,7 @@
                         </h3>
                     </div>
                 </div>
-                <div class="project-item">
+                <div class="project-item" onclick="route('/events?event=fieldEvents')">
                     <div class="project-img">
                         <a href="/events?event=fieldEvents"><img
                                 src="https://cbsconcord2024.com/wp-content/uploads/2024/05/istockphoto-1153130310-612x612-1.jpg" alt="images" /></a>
@@ -830,6 +837,14 @@
         }
     }
     setGallary();
+    function setEvents(){
+        let box = document.querySelectorAll('.project-img');
+        for(let i=0; i<box.length; i++){
+            box[i].style.backgroundImage = `url('${box[i].childNodes[1].childNodes[0].src}')`;
+            box[i].childNodes[1].childNodes[0].style.display = "none";
+        }
+    }
+    setEvents();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
