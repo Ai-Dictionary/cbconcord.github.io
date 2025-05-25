@@ -16,6 +16,13 @@ $(document).ready(function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.innerHTML += `
+    <video id="background-video" loop autoplay muted>
+        <source src="../images/fire.mp4" type="video/mp4">
+    </video>`;
+});
+
 function route(link){
     window.location = link;
 }

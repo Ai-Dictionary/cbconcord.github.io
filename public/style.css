@@ -9942,9 +9942,10 @@ body .search-modal .close:hover {
 html,
 body {
   font-size: 16px;
-  background: url('../images/fire.gif') no-repeat fixed!important;
+  /* background: url('../images/fire.gif') no-repeat fixed!important;
   background-repeat: no-repeat!important;
-  background-size: cover!important;
+  background-size: cover!important; */
+  background: transparent!important;
   color: #F6f6f6!important;
   font-family: 'Livvic', sans-serif;
   vertical-align: baseline;
