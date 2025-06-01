@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <video id="background-video" loop autoplay muted preload="auto">
         <source src="../images/fire.mp4" type="video/mp4">
     </video>`;
-    document.getElementById('loader').style.display = "none";
+    setTimeout(()=>{
+        document.getElementById('loader').style.display = "none";
+    },4000);
 });
 
 function route(link){
