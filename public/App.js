@@ -18,9 +18,10 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.innerHTML += `
-    <video id="background-video" loop autoplay muted>
+    <video id="background-video" loop autoplay muted preload="auto">
         <source src="../images/fire.mp4" type="video/mp4">
     </video>`;
+    document.getElementById('loader').style.display = "none";
 });
 
 function route(link){
@@ -40,10 +41,10 @@ function previewImagesListener(){
 }
 
 function previewImages(index){
-    const images = document.querySelectorAll('.previewImage');
+    const images = document.querySelectorAll('.crop-image');
     document.querySelector('.previewImage-back').style.display = "block";
     let imageDiv = document.querySelector('.previewImage-back');
-    imageDiv.childNodes[3].innerHTML = `<image src="${images[index].src}" alt="cbconcord"/>`;
+    imageDiv.childNodes[3].innerHTML = `<image src="${images[index].getAttribute('data-background-image').replaceAll(' ','%20')}" alt="cbconcord"/>`;
     document.querySelector('#slide-length').textContent = `${index+1}/${document.querySelectorAll('.previewImage').length}`;
     slide_image = index;
 }
@@ -55,7 +56,7 @@ function previewImagesClose(){
 
 function leftImage(){
     if(slide_image <= 0){
-        slide_image = document.querySelectorAll('.previewImage').length-1;
+        slide_image = document.querySelectorAll('.crop-image').length-1;
     }else{
         slide_image--;
     }
@@ -63,7 +64,7 @@ function leftImage(){
 }
 
 function rightImage(){
-    if(slide_image >= document.querySelectorAll('.previewImage').length-1){
+    if(slide_image >= document.querySelectorAll('.crop-image').length-1){
         slide_image = 0;
     }else{
         slide_image++;
@@ -101,7 +102,7 @@ function imageIdCopy(){
 }
 
 function downloadImage(){
-    const image = document.querySelectorAll('.previewImage')[slide_image];
+    const image = document.querySelectorAll('.crop-image')[slide_image];
     const fileName = 'cbsconcord.png';
     const link = document.createElement("a");
     link.href = image.src;
