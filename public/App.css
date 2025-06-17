@@ -305,11 +305,10 @@ li {
   }
   p{
     padding: 0px 10%;
-    font-weight: 600;
     font-family: sans-serif;
     text-align: justify;
-    max-height: 50%;
-    overflow: hidden;
+    max-height: 60%;
+    overflow: auto;
   }
   span{
     padding: 8px 10%;
