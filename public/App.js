@@ -160,7 +160,7 @@ function previewSponsore(index){
     let imageDiv = document.querySelector('.previewImage-back');
     imageDiv.childNodes[3].childNodes[1].innerHTML = `<image src="${images[index].src}" alt="cbconcord"/>`;
     imageDiv.childNodes[3].childNodes[3].textContent = about[index].textContent;
-    imageDiv.childNodes[3].childNodes[5].textContent = access[index].textContent;
+    imageDiv.childNodes[3].childNodes[5].innerHTML = access[index].innerHTML;
     document.querySelector('#slide-length').textContent = `${index+1}/${document.querySelectorAll('.previewImage').length}`;
     slide_image = index;
 }
