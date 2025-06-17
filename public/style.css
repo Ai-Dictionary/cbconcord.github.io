@@ -9939,6 +9939,9 @@ body .search-modal .close:hover {
 /* -----------------------------------
     01. General CSS
 -------------------------------------*/
+html{
+  background-color: black;
+}
 html,
 body {
   font-size: 16px;

@@ -89,6 +89,12 @@ app.get('/participater', (req, res) => {
     });
 });
 
+app.get('/merchandise', (req, res) => {
+    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
+        res.status(200).render('merchandise',{header, footer});
+    });
+});
+
 app.all(/.*/, (req, res) => {
     res.status(404).render('notfound',{error: 404, message: "Page not found on this url, check the source or report it"});
 });

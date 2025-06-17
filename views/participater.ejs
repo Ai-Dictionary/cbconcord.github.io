@@ -600,13 +600,6 @@
 <script>
     document.getElementById('header').innerHTML = document.getElementById('header').textContent;
     document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
-    document.querySelector('.previewImage-back').innerHTML = document.querySelector('.previewImage-back').textContent;
-    previewSponsoreListener();
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchParam = urlParams.get('imageReview');
-    if (searchParam != null) {
-        previewSponsore((searchParam * 1));
-    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
