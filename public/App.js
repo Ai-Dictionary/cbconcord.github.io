@@ -17,10 +17,12 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.body.innerHTML += `
-    <video id="background-video" loop autoplay muted preload="auto">
-        <source src="../images/fire.mp4" type="video/mp4">
-    </video>`;
+    if(!window.location.pathname.includes('/security/admin/confidential')){
+        document.body.innerHTML += `
+        <video id="background-video" loop autoplay muted preload="auto">
+            <source src="../images/fire.mp4" type="video/mp4">
+        </video>`;
+    }
     setTimeout(()=>{
         document.getElementById('loader').style.display = "none";
     },4000);
@@ -170,4 +172,48 @@ function previewSponsoreClose(){
     imageDiv.childNodes[3].childNodes[1].innerHTML = '';
     imageDiv.childNodes[3].childNodes[3].textContent = '';
     imageDiv.childNodes[3].childNodes[5].textContent = '';
+}
+
+function login(id){
+    document.querySelector('.login-option').style.display = "none";
+    if(id==1){
+        document.getElementById('back').style.display = "block";
+        document.getElementById('representative').style.display = "block";
+        document.getElementById('warning').style.display = "block";
+        document.getElementById('loader').style.display = "block";
+        setTimeout(()=>{
+            document.getElementById('loader').style.display = "none";
+            document.getElementById('warning').style.display = "none";
+        },3000);
+        const url = '/assets/pdf/Representatives Profile.pdf';
+
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+
+        const container = document.getElementById('representative');
+
+        pdfjsLib.getDocument(url).promise.then(pdf => {
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            pdf.getPage(pageNum).then(page => {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                container.appendChild(canvas);
+
+                page.render({ canvasContext: context, viewport: viewport });
+            });
+            }
+        });
+    }else{
+        alert("Sorry, this feature is under development!\ntry any other feature or wait until it done..");
+        logout();
+    }
+}
+function logout(){
+    document.getElementById('back').style.display = "none";
+    document.getElementById('representative').style.display = "none";
+    document.getElementById('warning').style.display = "none";
+    document.querySelector('.login-option').style.display = "block";
 }

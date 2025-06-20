@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title version="1.0">Confidential - cbsconcord</title>
+    <link rel="apple-touch-icon" href="/public/logo1500.png">
+    <link rel="icon" href="/public/favicon.ico" sizes="192x192">
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/fonts/flaticon.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/off-canvas.css" />
+    <link rel="stylesheet" href="https://thedriftmedia.com/assets/css/rsmenu-main.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/rs-spacing.css" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
+    <link rel="stylesheet" type="text/css" href="/public/App.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://thedriftmedia.com/assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf_viewer.min.css" />
+</head>
+<style>
+    body{
+        background-color: black!important;
+    }
+    #back{
+        display: none;
+        width: 100%;
+        padding: 4px 10px;
+        text-transform: capitalize;
+        border-bottom: 2px solid white;
+        div{
+            width: fit-content;
+            cursor: pointer;
+        }
+    }
+    #warning{
+        display: none;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        bottom: 20%;
+        left: 0%;
+        z-index: 999999;
+    }
+    .login-option{
+        width: 100%;
+        margin: 2% auto 10% auto;
+        small{
+            display: block;
+            width: 70%;
+            margin-bottom: 80px;
+        }
+        .flx{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .card{
+                text-align: center;
+                cursor: pointer;
+                svg{
+                    width: 50px;
+                    height: 50px;
+                    margin: 20px auto 5px auto;
+                }
+            }
+        }
+    }
+    #representative{
+        display: none;
+        width: min-content;
+        margin: 4px auto;
+        height: 800px;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+    @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
+        .flx{
+            flex-direction: column;
+        }
+        .login-option{
+            small{
+                width: 95%;
+            }
+            .flx{
+                flex-direction: column;
+                .card{
+                    margin: 10px auto;
+                }
+            }
+        }
+        #representative{
+            width: 100%;
+            canvas{
+                width: 100%;
+            }
+        }
+    }
+</style>
+<body class="defult-home">
+
+    <div id="loader" class="loader">
+        <div class="loader-container"></div>
+    </div>
+
+    <span id="header">
+        <%= header %>
+    </span>
+
+    <section id="back" class="text-white bg-dark">
+        <div onclick="logout();">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg> Back to menu
+        </div>
+    </section>
+    <div id="warning">Please wait, we are set the pdf viewer...</div>
+    <section class="login-option">
+        <div class="sec-title2 text-center mb-45">
+            <h2 class="title">
+                Confidential
+            </h2>
+            <div class="heading-line"></div>
+            <small class="text-muted container"><strong>This page is intended for access via QR code only</strong>. Do not share the direct link with anyone, and avoid opening it through your browser history or by typing the URL manually. To maintain privacy and security, always use the QR code to access this page. If you must share it, only share the QR code and only with people you/school trust.</small>
+        </div>
+        <div class="flx">
+            <div class="card text-white bg-dark" style="width: 18rem;" onclick="login(1);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people card-img-top" viewBox="0 0 16 16">
+                    <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                </svg>
+                <div class="card-body">
+                    <h5 class="card-title">Representatives Profile</h5>
+                </div>
+            </div>
+            <div class="card text-white bg-dark" style="width: 18rem;" onclick="login(2);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-calendar4-event card-img-top" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+                    <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+                <div class="card-body">
+                    <h5 class="card-title">Event Finalist</h5>
+                </div>
+            </div>
+            <div class="card text-white bg-dark" style="width: 18rem;" onclick="login(3);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-trophy-fill card-img-top" viewBox="0 0 16 16">
+                    <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5q0 .807-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935m10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935"/>
+                </svg>
+                <div class="card-body">
+                    <h5 class="card-title">Winners</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="representative">
+    </section>
+    
+    <!-- Footer Start -->
+    <footer id="rs-footer" class="rs-footer">
+        <%= footer %>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- start scrollUp  -->
+    <div id="scrollUp" class="orange-color">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- End scrollUp  -->
+
+    <!-- jquery latest version -->
+    <script src="https://thedriftmedia.com/assets/js/jquery.min.js"></script>
+    <!-- Bootstrap v4.4.1 js -->
+    <script src="https://thedriftmedia.com/assets/js/bootstrap.min.js"></script>
+    <!-- Menu js -->
+    <script src="https://thedriftmedia.com/assets/js/rsmenu-main.js"></script>
+    <!-- op nav js -->
+    <script src="https://thedriftmedia.com/assets/js/jquery.nav.js"></script>
+    <!-- owl.carousel js -->
+    <script src="https://thedriftmedia.com/assets/js/owl.carousel.min.js"></script>
+    <!-- wow js -->
+    <script src="https://thedriftmedia.com/assets/js/wow.min.js"></script>
+    <!-- main js -->
+    <script src="https://thedriftmedia.com/assets/js/main.js"></script>
+
+    <script src="https://thedriftmedia.com/js/jquery-3.3.1.min.js"></script>
+    <script src="https://thedriftmedia.com/js/popper.min.js"></script>
+    <script src="https://thedriftmedia.com/js/bootstrap.min.js"></script>
+    <script src="https://thedriftmedia.com/js/main.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js"></script>
+<script src="/public/App.js"></script>
+<script>
+    document.getElementById('header').innerHTML = document.getElementById('header').textContent;
+    document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</html>

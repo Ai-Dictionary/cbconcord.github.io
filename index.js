@@ -13,6 +13,7 @@ class WEB{
         this.port = port;
         this.filename = path.basename(__filename);
         this.appInfo = jsonfile.readFileSync('./public/manifest.json');
+        this.token = this.appInfo.product_id;
     }
 }
 
@@ -93,6 +94,17 @@ app.get('/merchandise', (req, res) => {
     Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
         res.status(200).render('merchandise',{header, footer});
     });
+});
+
+app.get('/security/admin/confidential/:token', (req, res) => {
+  const { token } = req.params;
+  if(token == web.token){
+    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
+        res.status(200).render('home',{header, footer});
+    });
+  }else{
+    res.redirect('/404');
+  }
 });
 
 app.all(/.*/, (req, res) => {
