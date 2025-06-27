@@ -69,14 +69,74 @@
             }
         }
     }
-    #representative{
+    #representative, #eventfinalist{
         display: none;
+    }
+    #representative{
         width: min-content;
         margin: 4px auto;
         height: 800px;
         overflow: auto;
         scrollbar-width: thin;
         scrollbar-color: transparent transparent;
+    }
+    #eventfinalist h3{
+        width: 60%;
+        margin: 30px auto 5px auto;
+    }
+    .layout{
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .accordion{
+        width: 60%;
+        margin: 15px auto 30px auto;
+        transition: 1s ease-in-out;
+    }
+    .accordion__question{
+        width: 100%;
+        padding: 10px;
+        background: #343a40;
+        border-radius: 10px;
+        font-family: Verdana;
+        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .img{
+            --size: 150px;
+            width: var(--size);
+            height: var(--size);
+            background: mistyrose;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .body{
+            width: 55%;
+            user-select: none;
+            cursor: pointer;
+            p{
+                max-height: 100px;
+                overflow: hidden;
+            }
+        }
+        .btn{
+            height: fit-content;
+            margin: auto 0px;
+        }
+    }
+    .accordion__answer p{
+        color: grey;
+        text-align: justify;
+    }
+    .accordion__answer{
+        display: none;
+    }
+    .accordion.active .accordion__answer{
+        display: block;
     }
     @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
         .flx{
@@ -97,6 +157,24 @@
             width: 100%;
             canvas{
                 width: 100%;
+            }
+        }
+        .layout{
+            margin-top: 20px;
+        }
+        .accordion{
+            width: 90%;
+        }
+        .accordion__question{
+            flex-direction: column;
+            .img, .body, .btn{
+                width: 100%;
+            }
+            .body{
+                margin-top: 10px;
+                p{
+                    font-size: 11px;
+                }
             }
         }
     }
@@ -155,7 +233,86 @@
             </div>
         </div>
     </section>
-    <section id="representative">
+    <section id="representative"></section>
+    <section id="eventfinalist">
+        <h3>Events</h3>
+        <div class="layout">
+            <div class="accordion"> 
+                <div class="accordion__question"> 
+                    <div class="img" style="background-image: url(/images/eventlist/band.avif);"></div>
+                    <div class="body">
+                        <h4>Western Band</h4>
+                        <p>In 2025, the Calcutta Boys' School proudly presents a spectacular Western Band performance, showcasing precision, rhythm, and musical artistry. The ensemble brings dynamic flair through synchronized instrumentation and rich harmonies, honoring traditions while embracing modern expression. This event highlights the students’ dedication, discipline, and passion for music, setting the stage for an unforgettable evening that celebrates sound, style, and spirited performance in true Western band fashion.</p>
+                    </div> 
+                    <div class="btn btn-light"><i class="fa fa-plus"></i> See your school</div>
+                </div> 
+                <div class="accordion__answer"> 
+                    <p>
+                        No data found for this event!!
+                    </p>
+                </div> 
+            </div>
+            <div class="accordion"> 
+                <div class="accordion__question"> 
+                    <div class="img" style="background-image: url(/images/eventlist/dance.jpg);"></div>
+                    <div class="body">
+                        <h4>Western Dance</h4>
+                        <p>In 2025, the Calcutta Boys’ School presents an electrifying Western Dance showcase, blending style, emotion, and kinetic energy. Students perform contemporary and urban-inspired routines that highlight precision, grace, and rhythmic strength. This event captures the spirit of Western dance—where choreography meets creativity—and reflects the dedication, versatility, and passion of the young performers. A celebration of movement that’s sure to leave the audience inspired and energized.</p>
+                    </div> 
+                    <div class="btn btn-light"><i class="fa fa-plus"></i> See your school</div>
+                </div> 
+                <div class="accordion__answer"> 
+                    <p>
+                        No data found for this event!!
+                    </p>
+                </div> 
+            </div>
+            <div class="accordion"> 
+                <div class="accordion__question"> 
+                    <div class="img" style="background-image: url(/images/eventlist/fashion.avif);"></div>
+                    <div class="body">
+                        <h4>Fashion Show</h4>
+                        <p>In 2025, the Calcutta Boys’ School proudly unveils a captivating Fashion Show celebrating innovation, elegance, and student expression. With bold concepts and inspired styling, young models command the runway with confidence and charisma. The event shines a spotlight on creativity in design, self-presentation, and teamwork—transforming the stage into a canvas of color and imagination. A dazzling celebration of talent and individuality through fashion-forward performance.</p>
+                    </div> 
+                    <div class="btn btn-light"><i class="fa fa-plus"></i> See your school</div>
+                </div> 
+                <div class="accordion__answer"> 
+                    <p>
+                        No data found for this event!!
+                    </p>
+                </div> 
+            </div>
+            <div class="accordion"> 
+                <div class="accordion__question"> 
+                    <div class="img" style="background-image: url(/images/eventlist/acoustic.webp);"></div>
+                    <div class="body">
+                        <h4>Acoustic Event</h4>
+                        <p>In 2025, the Calcutta Boys’ School presents an evocative Acoustic Event, celebrating the power of pure, unplugged sound. Students showcase heartfelt vocals and refined instrumentation in an intimate setting that elevates every note and lyric. This soulful evening highlights musical authenticity, emotional depth, and the art of subtlety, offering an immersive experience where simplicity becomes strength. A harmonious tribute to sound in its most genuine form.</p>
+                    </div> 
+                    <div class="btn btn-light"><i class="fa fa-plus"></i> See your school</div>
+                </div> 
+                <div class="accordion__answer"> 
+                    <p>
+                        No data found for this event!!
+                    </p>
+                </div> 
+            </div>
+            <div class="accordion"> 
+                <div class="accordion__question"> 
+                    <div class="img" style="background-image: url(/images/eventlist/football.jpg);"></div>
+                    <div class="body">
+                        <h4>Football</h4>
+                        <p>In 2025, the Calcutta Boys’ School proudly hosts an exhilarating Football event, igniting the pitch with energy, sportsmanship, and tactical brilliance. Teams clash in a spirited contest that reflects dedication, teamwork, and fierce determination. This event celebrates the essence of the beautiful game—where every goal, pass, and play tells a story of resilience and unity. A thrilling showcase of youth-driven passion and competitive excellence.</p>
+                    </div> 
+                    <div class="btn btn-light"><i class="fa fa-plus"></i> See your school</div>
+                </div> 
+                <div class="accordion__answer"> 
+                    <p>
+                        No data found for this event!!
+                    </p>
+                </div> 
+            </div>
+        </div>
     </section>
     
     <!-- Footer Start -->
@@ -196,6 +353,16 @@
 <script>
     document.getElementById('header').innerHTML = document.getElementById('header').textContent;
     document.getElementById('rs-footer').innerHTML = document.getElementById('rs-footer').textContent;
+    let answers = document.querySelectorAll(".accordion"); 
+    answers.forEach((event) => { 
+        event.addEventListener("click", () => { 
+            if(event.classList.contains("active")){ 
+                event.classList.remove("active"); 
+            }else{
+                event.classList.add("active"); 
+            } 
+        }); 
+    });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>

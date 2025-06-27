@@ -181,31 +181,37 @@ function login(id){
         document.getElementById('representative').style.display = "block";
         document.getElementById('warning').style.display = "block";
         document.getElementById('loader').style.display = "block";
+        if(document.getElementById('representative').innerHTML==''){
+            const url = '/assets/pdf/Representatives Profile.pdf';
+
+            const pdfjsLib = window['pdfjs-dist/build/pdf'];
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+
+            const container = document.getElementById('representative');
+
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                container.innerHTML = '';
+                for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                pdf.getPage(pageNum).then(page => {
+                    const viewport = page.getViewport({ scale: 1.5 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    container.appendChild(canvas);
+
+                    page.render({ canvasContext: context, viewport: viewport });
+                });
+                }
+            });
+        }
         setTimeout(()=>{
             document.getElementById('loader').style.display = "none";
             document.getElementById('warning').style.display = "none";
         },3000);
-        const url = '/assets/pdf/Representatives Profile.pdf';
-
-        const pdfjsLib = window['pdfjs-dist/build/pdf'];
-        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
-
-        const container = document.getElementById('representative');
-
-        pdfjsLib.getDocument(url).promise.then(pdf => {
-            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-            pdf.getPage(pageNum).then(page => {
-                const viewport = page.getViewport({ scale: 1.5 });
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-                container.appendChild(canvas);
-
-                page.render({ canvasContext: context, viewport: viewport });
-            });
-            }
-        });
+    }else if(id==2){
+        document.getElementById('back').style.display = "block";
+        document.getElementById('eventfinalist').style.display = "block";
     }else{
         alert("Sorry, this feature is under development!\ntry any other feature or wait until it done..");
         logout();
@@ -214,6 +220,7 @@ function login(id){
 function logout(){
     document.getElementById('back').style.display = "none";
     document.getElementById('representative').style.display = "none";
+    document.getElementById('eventfinalist').style.display = "none";
     document.getElementById('warning').style.display = "none";
     document.querySelector('.login-option').style.display = "block";
 }
