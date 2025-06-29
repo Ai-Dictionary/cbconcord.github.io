@@ -212,6 +212,9 @@ function login(id){
     }else if(id==2){
         document.getElementById('back').style.display = "block";
         document.getElementById('eventfinalist').style.display = "block";
+    }else if(id==4){
+        document.getElementById('back').style.display = "block";
+        document.getElementById('prelimsschedule').style.display = "block";
     }else{
         alert("Sorry, this feature is under development!\ntry any other feature or wait until it done..");
         logout();
@@ -221,6 +224,7 @@ function logout(){
     document.getElementById('back').style.display = "none";
     document.getElementById('representative').style.display = "none";
     document.getElementById('eventfinalist').style.display = "none";
+    document.getElementById('prelimsschedule').style.display = "none";
     document.getElementById('warning').style.display = "none";
     document.querySelector('.login-option').style.display = "block";
 }

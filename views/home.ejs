@@ -69,7 +69,7 @@
             }
         }
     }
-    #representative, #eventfinalist{
+    #representative, #eventfinalist, #prelimsschedule{
         display: none;
     }
     #representative{
@@ -138,6 +138,30 @@
     .accordion.active .accordion__answer{
         display: block;
     }
+    #prelimsschedule{
+        width: 80%;
+        margin: 30px auto 10px auto;
+        text-align: center;
+        .flx{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 40px auto;
+            div{
+                width: 45%;
+                background: #343a40;
+                border-radius: 5px;
+                padding: 10px;
+                text-align: left;
+                p{
+                    color: #fff;
+                    strong{
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
     @media only screen and (max-width: 900px), only screen and (min-width: 900px) and (max-width: 1200px){
         .flx{
             flex-direction: column;
@@ -177,6 +201,17 @@
                 }
             }
         }
+        #prelimsschedule{
+            width: 95%;
+            .flx{
+                flex-direction: column;
+                div{
+                    width: 95%;
+                    margin: 5px auto 20px auto;
+                }
+            }
+        }
+
     }
 </style>
 <body class="defult-home">
@@ -229,6 +264,14 @@
                 </svg>
                 <div class="card-body">
                     <h5 class="card-title">Winners</h5>
+                </div>
+            </div>
+            <div class="card text-white bg-dark" style="width: 18rem;" onclick="login(4);">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-hourglass-split card-img-top" viewBox="0 0 16 16">
+                    <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                </svg>
+                <div class="card-body">
+                    <h5 class="card-title">Prelims Schedule</h5>
                 </div>
             </div>
         </div>
@@ -314,6 +357,45 @@
             </div>
         </div>
     </section>
+    <section id="prelimsschedule">
+        <h3>CONCORD 2025 PRELIMS SCHEDULE FINAL</h3>
+        <div class="flx">
+            <div class="left">
+                <p>
+                    <strong>DATE: 05.07.2025</strong>
+                </p>
+                <hr>
+                <p>
+                    EVENT 1: WESTERN BAND (CONVERGE)<br>
+                    EVENT 2: WESTERN DANCE (CONFLAGRATION)<br>
+                </p>
+                <hr>
+                <p>
+                    REGISTRATION: 08:00 am to 08:30 am<br>
+                    WESTERN BAND: 08:30 am to 10.30 am<br>
+                    WESTERN DANCE: 10:30 am to 12:30 pm<br>
+                </p>
+            </div>
+            <div class="right">
+                <p>
+                    <strong>DATE: 07.07.2025</strong>
+                </p>
+                <hr>
+                <p>
+                    EVENT 1: ACOUSTIC EVENT (CONSONANCE)<br>
+                    EVENT 2: FASHION SHOW (CONJURE)<br>
+                    EVENT 3: FOOTBALL (CONSOLIDATE)<br>
+                </p>
+                <hr>
+                <p>
+                    REGISTRATION: 08:30  am to 09:30 am<br>
+                    ACOUSTIC EVENT: 10:00 am to 11.30 am<br>
+                    FASHION SHOW: 11:45 am to 01:00 pm<br>
+                    FOOTBALL: 10:00 am to 02:00 pm<br>
+                </p>
+            </div>
+        </div>
+    </section>
     
     <!-- Footer Start -->
     <footer id="rs-footer" class="rs-footer">
@@ -363,6 +445,7 @@
             } 
         }); 
     });
+    login(4);
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </html>
