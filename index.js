@@ -45,8 +45,9 @@ const promises = [
 ];
 
 app.get('/', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('index',{header, footer});
+    Promise.all(promises).then(async ([header, previewImage, previewSponsor, footer]) => {
+        const events = await ejs.renderFile('./views/eventSchedule.ejs');
+        res.status(200).render('index',{header, events, footer});
     });
 });
 
