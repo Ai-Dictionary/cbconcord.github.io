@@ -410,6 +410,12 @@
         </div>
     </section>
     
+    <!-- Partner Start -->
+    <div class="rs-partner pt-80 pb-70" id="partners">
+        <%= partners %>
+    </div>    
+    <!-- Partner End -->
+
     <!-- Footer Start -->
     <footer id="rs-footer" class="rs-footer">
         <%= footer %>
@@ -421,7 +427,9 @@
         <i class="fa fa-angle-up"></i>
     </div>
     <!-- End scrollUp  -->
-
+    <script>
+        document.getElementById('partners').innerHTML = document.getElementById('partners').textContent;
+    </script>
     <!-- jquery latest version -->
     <script src="https://thedriftmedia.com/assets/js/jquery.min.js"></script>
     <!-- Bootstrap v4.4.1 js -->

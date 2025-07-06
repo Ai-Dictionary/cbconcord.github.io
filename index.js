@@ -41,13 +41,14 @@ const promises = [
     ejs.renderFile('./views/header.ejs'),
     ejs.renderFile('./views/previewImage.ejs'),
     ejs.renderFile('./views/previewSponsor.ejs'),
+    ejs.renderFile('./views/partners.ejs'),
     ejs.renderFile('./views/footer.ejs')
 ];
 
 app.get('/', (req, res) => {
-    Promise.all(promises).then(async ([header, previewImage, previewSponsor, footer]) => {
+    Promise.all(promises).then(async ([header, previewImage, previewSponsor, partners, footer]) => {
         const events = await ejs.renderFile('./views/eventSchedule.ejs');
-        res.status(200).render('index',{header, events, footer});
+        res.status(200).render('index',{header, events, partners, footer});
     });
 });
 
@@ -56,52 +57,52 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/gallery', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('gallery',{header, previewImage, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('gallery',{header, previewImage, partners, footer});
     });
 });
 
 app.get('/about', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('about',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('about',{header, partners, footer});
     });
 });
 
 app.get('/sponsors', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('sponsors',{header, previewSponsor, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('sponsors',{header, previewSponsor, partners, footer});
     });
 });
 
 app.get('/contact', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('contact',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('contact',{header, partners, footer});
     });
 });
 
 app.get('/events', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('events',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('events',{header, partners, footer});
     });
 });
 
 app.get('/participater', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('participater',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('participater',{header, partners, footer});
     });
 });
 
 app.get('/merchandise', (req, res) => {
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('merchandise',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('merchandise',{header, partners, footer});
     });
 });
 
 app.get('/security/admin/confidential/:token', (req, res) => {
   const { token } = req.params;
   if(token == web.token){
-    Promise.all(promises).then(([header, previewImage, previewSponsor, footer]) => {
-        res.status(200).render('home',{header, footer});
+    Promise.all(promises).then(([header, previewImage, previewSponsor, partners, footer]) => {
+        res.status(200).render('home',{header, partners, footer});
     });
   }else{
     res.redirect('/404');

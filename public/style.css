@@ -23137,6 +23137,7 @@ main .post-content .post-meta {
     28. Partner Section CSS
 ------------------------------------*/
 .rs-partner {
+  padding: 50px 0px;
   background: #0F0F0F;
   border-bottom: 1px solid #fff;
 }
@@ -37925,7 +37926,7 @@ a[data-toggle="collapse"] {
   height: 100%;
 }
 .logo-img{
-  height: 80px;
+  height: fit-content;
   margin-left: 0px;
 
 }

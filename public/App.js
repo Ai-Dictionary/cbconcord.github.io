@@ -18,10 +18,18 @@ $(document).ready(function () {
 
 document.addEventListener('DOMContentLoaded', () => {
     if(!window.location.pathname.includes('/security/admin/confidential')){
-        document.body.innerHTML += `
-        <video id="background-video" loop autoplay muted preload="auto">
-            <source src="../images/fire.mp4" type="video/mp4">
-        </video>`;
+        // adding background video
+        const video = document.createElement('video');
+        video.id = 'background-video';
+        video.loop = true;
+        video.autoplay = true;
+        video.muted = true;
+        video.preload = 'auto';
+        const source = document.createElement('source');
+        source.src = '../images/fire.mp4';
+        source.type = 'video/mp4';
+        video.appendChild(source);
+        document.body.appendChild(video);
     }
     setTimeout(()=>{
         document.getElementById('loader').style.display = "none";
