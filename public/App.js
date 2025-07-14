@@ -56,7 +56,7 @@ function previewImages(index){
     const images = document.querySelectorAll('.crop-image');
     document.querySelector('.previewImage-back').style.display = "block";
     let imageDiv = document.querySelector('.previewImage-back');
-    imageDiv.childNodes[3].innerHTML = `<image src="${images[index].getAttribute('data-background-image').replaceAll(' ','%20')}" alt="cbconcord"/>`;
+    imageDiv.childNodes[3].innerHTML = `<image src="${images[index].getAttribute('data-background-image').replaceAll(' ','%20')}" loading="lazy" alt="cbconcord"/>`;
     document.querySelector('#slide-length').textContent = `${index+1}/${document.querySelectorAll('.previewImage').length}`;
     slide_image = index;
 }
@@ -168,7 +168,7 @@ function previewSponsore(index){
     const access = document.querySelectorAll('.access-sponsor');
     document.querySelector('.previewImage-back').style.display = "block";
     let imageDiv = document.querySelector('.previewImage-back');
-    imageDiv.childNodes[3].childNodes[1].innerHTML = `<image src="${images[index].src}" alt="cbconcord"/>`;
+    imageDiv.childNodes[3].childNodes[1].innerHTML = `<image src="${images[index].src}" loading="lazy" alt="cbconcord"/>`;
     imageDiv.childNodes[3].childNodes[3].textContent = about[index].textContent;
     imageDiv.childNodes[3].childNodes[5].innerHTML = access[index].innerHTML;
     document.querySelector('#slide-length').textContent = `${index+1}/${document.querySelectorAll('.previewImage').length}`;
@@ -190,7 +190,7 @@ function login(id){
         document.getElementById('warning').style.display = "block";
         document.getElementById('loader').style.display = "block";
         if(document.getElementById('representative').innerHTML==''){
-            const url = '/assets/pdf/Representatives Profile.pdf';
+            const url = 'https://ai-dictionary.github.io/cbconcord.github.io/assets/pdf/Representatives Profile.pdf';
 
             const pdfjsLib = window['pdfjs-dist/build/pdf'];
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
